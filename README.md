@@ -87,7 +87,7 @@ Evaluated on SEC 10-K test benchmark across 50 financial extraction queries (rev
 
 ### 1. Clone & Setup Environment
 ```bash
-git clone https://github.com/your-username/enterprise-financial-rag.git
+git clone https://github.com/Sayad786/enterprise-financial-rag.git
 cd enterprise-financial-rag
 
 python3 -m venv venv
