@@ -101,7 +101,8 @@ with st.sidebar:
     enable_guardrails = st.toggle("AI Guardrails (Injection & Hallucination)", value=True)
     
     st.markdown("---")
-    st.caption("Developed by Sayad Khalid Uddin | Specialist – Data & AI Engineering")
+    st.markdown("Developed by **[Sayad Khalid Uddin](https://www.linkedin.com/in/sayad-khalid/)**")
+    st.caption("Specialist – Data & AI Engineering | LTIMindtree")
 
 # Load and Index
 with st.spinner("Indexing SEC 10-K with Layout-Aware Chunker & Hybrid Index..."):

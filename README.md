@@ -118,5 +118,11 @@ When an interviewer asks you about this project, structure your explanation with
 
 ---
 
+## 👨‍💻 Author & Connect
+* **Sayad Khalid Uddin** – [LinkedIn Profile](https://www.linkedin.com/in/sayad-khalid/)
+* Specialist – Data & AI Engineering | LTIMindtree
+
+---
+
 ## 📄 License
 MIT License. Built for enterprise AI engineering architectures.
