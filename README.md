@@ -114,27 +114,25 @@ streamlit run app.py
 
 ---
 
-## 🎤 Technical Interview Talking Points (Cheat Sheet)
+## 💡 Architectural Decisions & Design Trade-offs (FAQ)
 
-When an interviewer asks you about this project, structure your explanation with these exact talking points:
+### 1. Why Hybrid Search instead of pure Vector Search?
+In financial analysis, dense embeddings frequently miss exact identifiers like `$391,035M` or `Item 1A`. BM25 ensures exact lexical recall, while dense vectors capture semantic intent. We fuse them using Reciprocal Rank Fusion (RRF) with $k=60$ to avoid scale mismatch between bounded cosine similarities and unbounded BM25 scores.
 
-1. **Why Hybrid Search instead of pure Vector Search?**
-   > *"In financial analysis, dense embeddings frequently miss exact identifiers like '$391,035M' or 'Item 1A'. BM25 ensures exact lexical recall, while dense vectors capture semantic intent. We fuse them using Reciprocal Rank Fusion with $k=60$ to avoid scale mismatch."*
+### 2. How does Anthropic Contextual Retrieval improve performance?
+It eliminates chunk amnesia. In SEC filings, financial tables lose their meaning if severed from their section header. Contextual Retrieval prepends document and section breadcrumbs to each chunk prior to embedding, reducing retrieval failure rates by up to 49%.
 
-2. **How does Anthropic Contextual Retrieval improve performance?**
-   > *"It prevents chunk amnesia. In SEC filings, financial tables lose their meaning if severed from their section header. Contextual Retrieval prepends document and section breadcrumbs to each chunk before embedding, slashing false-positive retrieval."*
+### 3. How do you guarantee numerical accuracy and zero hallucination?
+We enforce a two-tier guardrail: first, Pydantic schemas require structured citations for every claim; second, our numerical fact-check verifier extracts all currency and percentage values from the answer and mathematically verifies their presence in the retrieved context chunks.
 
-3. **How do you guarantee numerical accuracy and zero hallucination?**
-   > *"We enforce a two-tier guardrail: first, Pydantic schemas require structured citations for every claim; second, our numerical fact-check verifier extracts all currency and percentage values from the answer and verifies their exact presence in the retrieved context chunks."*
-
-4. **How do you evaluate retrieval quality in production?**
-   > *"We integrated a continuous Ragas evaluation harness that calculates Faithfulness, Answer Relevancy, and Context Precision on every query, displaying real-time telemetry alongside p95 latency and token cost."*
+### 4. How is retrieval quality evaluated continuously?
+We integrated a continuous Ragas evaluation harness that calculates Faithfulness, Answer Relevancy, and Context Precision on every query, displaying real-time telemetry alongside p95 latency and token cost.
 
 ---
 
 ## 👨‍💻 Author & Connect
 * **Sayad Khalid Uddin** – [LinkedIn Profile](https://www.linkedin.com/in/sayad-khalid/)
-* Specialist – Data & AI Engineering | LTIMindtree
+* Specialist – Data Engineering | LTM
 
 ---
 
