@@ -1,10 +1,13 @@
 # Enterprise Financial & Regulatory Intelligence Engine (SOTA RAG)
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://enterprise-financial-rag-sayad.streamlit.app/)
 [![Architecture: Anthropic Contextual Retrieval](https://img.shields.io/badge/Architecture-Contextual%20Retrieval-orange)](https://www.anthropic.com/news/contextual-retrieval)
 [![Retrieval: Hybrid BM25 + Dense RRF](https://img.shields.io/badge/Retrieval-Hybrid%20BM25%20%2B%20Dense-green)](#)
 [![Evaluations: Ragas Continuous Harness](https://img.shields.io/badge/Evals-Ragas%20Harness-purple)](#)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+👉 **Live Interactive Demo:** [https://enterprise-financial-rag-sayad.streamlit.app/](https://enterprise-financial-rag-sayad.streamlit.app/)
 
 An enterprise-grade, layout-aware **Retrieval-Augmented Generation (RAG)** platform engineered specifically for SEC 10-K financial reports, balance sheets, and regulatory filings. Built with **Anthropic Contextual Retrieval**, **Hybrid Dense/BM25 Search**, **Reciprocal Rank Fusion (RRF)**, **Cross-Encoder Reranking**, **AI Guardrails**, and an automated **Ragas Continuous Evaluation Harness**.
 
